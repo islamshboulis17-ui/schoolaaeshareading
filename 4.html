@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ألفية ابن مالك في النحو والصرف</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+        :root {
+            --parchment: #f4ece1;
+            --ink-black: #1a1a1a;
+            --gold: #b8860b;
+            --emerald: #2d5a27;
+        }
+
+        body {
+            font-family: 'Amiri', serif;
+            background-color: #dfd3c3;
+            color: var(--ink-black);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .manuscript {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--parchment);
+            padding: 40px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        /* زركشة إسلامية بسيطة */
+        .manuscript::before {
+            content: "";
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px solid var(--gold);
+            pointer-events: none;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--emerald);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: var(--emerald);
+            margin: 0;
+        }
+
+        header p {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .author-info {
+            background: #e8e1d5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            border-right: 5px solid var(--gold);
+        }
+
+        .section-title {
+            background: var(--emerald);
+            color: white;
+            padding: 10px 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border-radius: 0 20px 20px 0;
+        }
+
+        .verses-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .verse-row {
+            display: flex;
+            justify-content: space-between;
+            background: rgba(255,255,255,0.5);
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            transition: background 0.3s;
+        }
+
+        .verse-row:hover {
+            background: #fff;
+        }
+
+        .hemistich {
+            width: 45%;
+            font-size: 1.4rem;
+            line-height: 1.6;
+        }
+
+        .hemistich.left {
+            text-align: left;
+            color: #444;
+        }
+
+        .verse-num {
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 0.9rem;
+            align-self: center;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+            .verse-row { flex-direction: column; text-align: center; }
+            .hemistich { width: 100%; margin-bottom: 10px; }
+            .hemistich.left { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="manuscript">
+    <header>
+        <h1>الخلاصة في النحو</h1>
+        <p>الشهيرة بـ "ألفية ابن مالك"</p>
+    </header>
+
+    <div class="author-info">
+        <strong>المؤلف:</strong> الإمام محمد بن عبد الله بن مالك الأندلسي (جمال الدين).<br>
+        <strong>التعريف:</strong> متن شعري يضم قواعد النحو والصرف العربي في ألف بيت وبيت.
+    </div>
+
+    <div class="section-title">مقدمة الألفية</div>
+
+    <div class="verses-container">
+        <div class="verse-row">
+            <div class="hemistich">قَالَ مُحَمَّدٌ هُوَ ابنُ مَالِكِ</div>
+            <div class="verse-num">١</div>
+            <div class="hemistich left">أَحْمَدُ رَبِّي اللهَ خَيْرَ مَالِكِ</div>
+        </div>
+
+        <div class="verse-row">
+            <div class="hemistich">مُصَلِّياً عَلَى النَّبِيِّ المُصْطَفَى</div>
+            <div class="verse-num">٢</div>
+            <div class="hemistich left">وَآلِهِ المُسْتَكْمِلِينَ الشَّرَفَا</div>
+        </div>
+
+        <div class="verse-row">
+            <div class="hemistich">وَأَسْتَعِينُ اللهَ فِي أَلْفِيَّهْ</div>
+            <div class="verse-num">٣</div>
+            <div class="hemistich left">مَقَاصِدُ النَّحْوِ بِهَا مَحْوِيَّهْ</div>
+        </div>
+
+        <div class="section-title">باب: الكلام وما يتألف منه</div>
+
+        <div class="verse-row">
+            <div class="hemistich">كَلامُنَا لَفْظٌ مُفِيدٌ كَاسْتَقِمْ</div>
+            <div class="verse-num">٤</div>
+            <div class="hemistich left">وَاسْمٌ وَفِعْلٌ ثُمَّ حَرْفٌ الكَلِمْ</div>
+        </div>
+
+        <div class="verse-row">
+            <div class="hemistich">وَاحِدُهُ كَلِمَةٌ وَالقَوْلُ عَمّْ</div>
+            <div class="verse-num">٥</div>
+            <div class="hemistich left">وَكِلْمَةٌ بِهَا كَلامٌ قَدْ يُؤَمّْ</div>
+        </div>
+        
+        <div class="verse-row">
+            <div class="hemistich">بِالجرِّ وَالتَّنْوينِ وَالنِّدَا وَأَلْ</div>
+            <div class="verse-num">٦</div>
+            <div class="hemistich left">وَمُسْنَدٍ لِلاسْمِ تَمْيِيزٌ حَصَلْ</div>
+        </div>
+    </div>
+
+    <footer>
+        خدمة لطلاب لغة الضاد &copy; 2026
+    </footer>
+</div>
+
+</body>
+</html>

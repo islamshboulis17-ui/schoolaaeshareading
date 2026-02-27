@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>منصة لغة الضاد | مدرسة عائشة بنت أبي بكر</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== متغيرات الألوان ===== */
+:root{
+--primary:#1a472a;
+--secondary:#c9a227;
+--light:#f4f6f7;
+}
+
+body{
+font-family:'Cairo',sans-serif;
+margin:0;
+background:var(--light);
+}
+
+/* ===== الهيدر + صورة الغلاف ===== */
+header{
+background:url("https://images.unsplash.com/photo-1588072432836-e10032774350") center/cover no-repeat;
+color:white;
+text-align:center;
+padding:90px 20px;
+position:relative;
+}
+
+header::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+header h1,
+header p{
+position:relative;
+z-index:2;
+}
+
+/* ===== عداد الزوار ===== */
+.visitor-counter{
+background:#2f6b45;
+color:white;
+text-align:center;
+padding:12px;
+font-weight:bold;
+border-bottom:4px solid var(--secondary);
+}
+
+.visitor-counter span{
+color:#c9a227;
+font-size:22px;
+}
+
+/* ===== الحاوية ===== */
+.container{
+width:92%;
+margin:auto;
+padding:30px 0;
+}
+
+/* ===== الأقسام ===== */
+.section-box{
+background:white;
+padding:25px;
+border-radius:15px;
+margin-bottom:30px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+h2{
+color:var(--primary);
+border-right:6px solid var(--secondary);
+padding-right:10px;
+}
+
+/* ===== الأزرار ===== */
+.vault-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
+.vault-btn{
+background:white;
+padding:18px;
+border-radius:10px;
+text-align:center;
+text-decoration:none;
+color:var(--primary);
+font-weight:bold;
+border:2px solid var(--primary);
+transition:.3s;
+}
+
+.vault-btn:hover{
+background:var(--primary);
+color:white;
+transform:translateY(-5px);
+}
+
+/* ===== مسابقة ===== */
+.quiz-question{
+background:#f9f9f9;
+padding:15px;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+#quizForm button{
+background:var(--primary);
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+transition:.3s;
+}
+
+#quizForm button:hover{
+background:var(--secondary);
+}
+
+/* ===== زر إظهار المسابقة ===== */
+#showQuizBtn{
+background:var(--primary);
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+margin-bottom:20px;
+transition:.3s;
+}
+
+#showQuizBtn:hover{
+background:var(--secondary);
+}
+
+/* ===== الفوتر ===== */
+footer{
+background:var(--primary);
+color:white;
+text-align:center;
+padding:40px;
+}
+
+.signature{
+color:var(--secondary);
+font-size:20px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>مدرسة عائشة بنت أبي بكر الأساسية المختلطة</h1>
+<p>مبادرة أفضل مدرسة داعمة للغة العربية</p>
+<h1>أهلا بكم في منصة القراءة الإلكترونية</h1>
+   
+<h1>*صوت الضاد* </h1>
+
+</header>
+
+<!-- عداد الزوار -->
+<div class="visitor-counter">
+عدد زوار المنصة :
+<span id="visitCount">0</span> زائر
+</div>
+
+<div class="official-links">
+    <strong style="text-align:center">روابط رسمية:</strong>
+    <a href="https://moe.gov.jo" target="_blank">وزارة التربية والتعليم</a> | 
+    <a href="https://nccd.gov.jo" target="_blank">المركز الوطني لتطوير المناهج</a> | 
+    <a href="https://siraj.moe.gov.jo">المساعد الذكي سراج</a> | 
+    <a href="https://darsak.gov.jo" target="_blank">منصة درسك</a>
+</div>
+
+
+<div class="container">
+
+<!-- أركان المنصة -->
+<section class="section-box">
+<h2 style="text-align:center">أركان المنصة المعرفية</h2>
+
+<div class="vault-grid">
+
+<a href="1.html" class="vault-btn">خزانة الأمثال الشعبية</a>
+<a href="2.html" class="vault-btn">خزانة الكتب التعليمية</a>
+<a href="3.html" class="vault-btn">حكايا خلف الأمثال</a>
+<a href="4.html" class="vault-btn">ألفية ابن مالك</a>
+<a href="5.html" class="vault-btn">أهمية التحدث بالفصحى</a>
+<a href="6.html" class="vault-btn">المطالعة وفوائدها</a>
+<a href="7.html" class="vault-btn">أفضل الروايات العربية</a>
+<a href="9.html" class="vault-btn">تنمية المهارات والإبداع</a>
+<a href="8.html" class="vault-btn">القصص الإسلامية</a>
+<a href="10.html" class="vault-btn">روائع المكتبة العلمية</a>
+<a href="11.html" class="vault-btn">قصص إسلامية للأطفال</a>
+<a href="12.html" class="vault-btn">تحدي القراءة العربي</a>
+<a href="13.html" class="vault-btn">لغة القرآن والبيان</a>
+<a href="14.html" class="vault-btn">ركن الشعر العربي</a>
+<a href="15.html" class="vault-btn">مقالات أدبية وثقافية</a>
+
+</div>
+
+<section class="section-box">
+        <h2>مكتبة اللغة العربية (كتب وتلخيص)</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div style="background:white; padding:15px; border-radius:8px;">
+                <h4>كتاب: خصائص اللغة العربية</h4>
+                <p><small>التلخيص: يتناول عبقرية اللغة العربية في الاشتقاق والإيجاز والدقة في التعبير.</small></p>
+            </div>
+            <div style="background:white; padding:15px; border-radius:8px;">
+                <h4>كتاب: جواهر الأدب</h4>
+                <p><small>التلخيص: جامع لأهم فنون الإنشاء والمكاتبات والخطب الأدبية عبر العصور.</small></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-box">
+        <h2>أعلام الشعر العربي</h2>
+        <details>
+            <summary><b>المتنبي:</b> شاعر الحكمة وفخر العرب.</summary>
+            <p>مؤلفاته: ديوان المتنبي. تميز بشعر الحماسة والفلسفة.</p>
+        </details>
+        <details>
+            <summary><b>أحمد شوقي:</b> أمير الشعراء.</summary>
+            <p>مؤلفاته: الشوقيات، مسرحية مجنون ليلى. رائد النهضة الشعرية الحديثة.</p>
+        </details>
+    </section>
+
+    <section class="section-box" style="background:#eef5f0;">
+        <h2>زاوية النحو واللغة (دروس مبسطة)</h2>
+        <ul>
+            <li><b>النحو:</b> الفرق بين الجملة الاسمية والفعلية ببساطة.</li>
+            <li><b>الصرف:</b> ميزان الكلمات (فـعـل) وكيفية اشتقاق الأسماء.</li>
+            <li><b>البلاغة:</b> التشبيه والاستعارة - كيف تجعل كلامك صوراً فنية؟</li>
+            <li><b>المعلقات الأندلسية:</b> قراءة في أجمل قصائد الأندلس ورقتها.</li>
+        </ul>
+    </section>
+
+
+</section>
+
+<!-- زر المسابقة -->
+<button id="showQuizBtn">ابدأ المسابقة</button>
+
+<!-- مسابقة اللغة العربية (مخفية) -->
+<section class="section-box" id="quiz-section" style="display:none;">
+<h2>مسابقة: اختبر معلوماتك في اللغة العربية</h2>
+
+<form id="quizForm">
+
+<div class="quiz-question">
+<p><b>1- ما هو العلم الذي يدرس أواخر الكلمات وإعرابها؟</b></p>
+<label><input type="radio" name="q1" value="0"> علم العروض</label><br>
+<label><input type="radio" name="q1" value="1"> علم النحو</label><br>
+<label><input type="radio" name="q1" value="0"> علم الصرف</label>
+</div>
+
+<div class="quiz-question">
+<p><b>2- من هو مؤلف ألفية ابن مالك؟</b></p>
+<label><input type="radio" name="q2" value="1"> ابن مالك</label><br>
+<label><input type="radio" name="q2" value="0"> المتنبي</label><br>
+<label><input type="radio" name="q2" value="0"> أبو تمام</label>
+</div>
+
+<div class="quiz-question">
+<p><b>3- أي من التالي يعتبر من أبرز أعلام الشعر العربي؟</b></p>
+<label><input type="radio" name="q3" value="1"> أحمد شوقي</label><br>
+<label><input type="radio" name="q3" value="0"> ابن خلدون</label><br>
+<label><input type="radio" name="q3" value="0"> ابن سينا</label>
+</div>
+
+<button type="button" onclick="checkQuiz()">إظهار النتيجة</button>
+
+<p id="quizResult" style="margin-top:15px; font-weight:bold;"></p>
+
+</form>
+</section>
+
+</div>
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>نظام التعليقات الذكي مع التخزين</title>
+    <style>
+        :root {
+            --primary: #5d4037;
+            --accent: #b8860b;
+            --bg: #fdfcf0;
+        }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); padding: 20px; }
+        
+        /* تصميم صندوق التعليقات */
+        .comment-box {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        h2 { color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
+        
+        .form-group { margin-bottom: 15px; }
+        input, textarea {
+            width: 100%; padding: 12px; border: 1px solid #ddd;
+            border-radius: 6px; box-sizing: border-box; font-family: inherit;
+        }
+        
+        button#submitBtn {
+            background: var(--primary); color: white; border: none;
+            padding: 10px 25px; border-radius: 6px; cursor: pointer; font-weight: bold;
+        }
+        button#submitBtn:hover { background: #3e2723; }
+
+        /* تصميم قائمة التعليقات */
+        #commentsDisplay { margin-top: 30px; }
+        .comment-card {
+            background: #f9f9f9; padding: 15px; border-radius: 8px;
+            margin-bottom: 15px; border-right: 5px solid var(--accent);
+            animation: slideIn 0.3s ease-out;
+        }
+        .comment-header { display: flex; justify-content: space-between; font-size: 0.85rem; color: #777; }
+        .comment-name { color: var(--primary); font-weight: bold; font-size: 1rem; }
+        .like-section { margin-top: 10px; }
+        .like-btn {
+            background: #fff; border: 1px solid #ccc; padding: 4px 12px;
+            border-radius: 20px; cursor: pointer; transition: 0.3s;
+        }
+        .liked { background: #e74c3c !important; color: white !important; border-color: #e74c3c !important; }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="comment-box">
+    <h2>اترك تعليقاً</h2>
+    
+    <div class="form-group">
+        <input type="text" id="userName" placeholder="اسمك الكريم...">
+    </div>
+    <div class="form-group">
+        <textarea id="commentContent" rows="3" placeholder="اكتب تعليقك هنا..."></textarea>
+    </div>
+    <button id="submitBtn" onclick="processComment()">نشر التعليق</button>
+
+    <div id="commentsDisplay">
+        </div>
+</div>
+
+<script>
+    // عند تحميل الصفحة، ابدأ بعرض التعليقات المخزنة
+    window.onload = function() {
+        renderComments();
+    };
+
+    function processComment() {
+        const name = document.getElementById('userName').value.trim();
+        const content = document.getElementById('commentContent').value.trim();
+
+        if (name === "" || content === "") {
+            alert("فضلاً، املأ جميع الحقول");
+            return;
+        }
+
+        const newComment = {
+            id: Date.now(),
+            name: name,
+            text: content,
+            time: new Date().toLocaleString('ar-EG'),
+            likes: 0,
+            isLiked: false
+        };
+
+        // جلب البيانات الحالية من التخزين
+        let comments = JSON.parse(localStorage.getItem('myCommentsData')) || [];
+        
+        // إضافة التعليق الجديد للبداية
+        comments.unshift(newComment);
+        
+        // حفظ في التخزين المحلي
+        localStorage.setItem('myCommentsData', JSON.stringify(comments));
+
+        // مسح الحقول وإعادة العرض
+        document.getElementById('userName').value = "";
+        document.getElementById('commentContent').value = "";
+        renderComments();
+    }
+
+    function renderComments() {
+        const display = document.getElementById('commentsDisplay');
+        const comments = JSON.parse(localStorage.getItem('myCommentsData')) || [];
+        
+        display.innerHTML = "";
+
+        comments.forEach(c => {
+            const card = document.createElement('div');
+            card.className = 'comment-card';
+            card.innerHTML = `
+                <div class="comment-header">
+                    <span class="comment-name">${c.name}</span>
+                    <span>${c.time}</span>
+                </div>
+                <p>${c.text}</p>
+                <div class="like-section">
+                    <button class="like-btn ${c.isLiked ? 'liked' : ''}" onclick="toggleLike(${c.id})">
+                        ❤️ إعجاب (${c.likes})
+                    </button>
+                </div>
+            `;
+            display.appendChild(card);
+        });
+    }
+
+    function toggleLike(id) {
+        let comments = JSON.parse(localStorage.getItem('myCommentsData'));
+        const index = comments.findIndex(c => c.id === id);
+        
+        if (index !== -1) {
+            if (!comments[index].isLiked) {
+                comments[index].likes++;
+                comments[index].isLiked = true;
+            } else {
+                comments[index].likes--;
+                comments[index].isLiked = false;
+            }
+            localStorage.setItem('myCommentsData', JSON.stringify(comments));
+            renderComments();
+        }
+    }
+</script>
+
+</body>
+</html>
+
+   
+<footer>
+<p>إعداد المعلمة </p>
+<div class="signature">إسلام الشبول</div>
+<p>وزارة التربية والتعليم - الأردن</p>
+</footer>
+
+<!-- سكربت عداد الزوار + المسابقة -->
+<script>
+// عداد الزوار
+if(localStorage.page_view){
+localStorage.page_view =
+Number(localStorage.page_view)+1;
+}else{
+localStorage.page_view=1;
+}
+document.getElementById("visitCount").innerText=localStorage.page_view;
+
+// إظهار المسابقة عند الضغط على الزر
+document.getElementById("showQuizBtn").addEventListener("click", function(){
+    let quizSection = document.getElementById("quiz-section");
+    quizSection.style.display = "block";
+    this.style.display = "none"; // يخفي الزر بعد الفتح
+});
+
+// تصحيح المسابقة
+function checkQuiz(){
+    let total=3; // عدد الأسئلة
+    let score=0;
+
+    for(let i=1;i<=total;i++){
+        let q=document.forms["quizForm"]["q"+i];
+        for(let j=0;j<q.length;j++){
+            if(q[j].checked && q[j].value=="1"){
+                score++;
+            }
+        }
+    }
+
+    let resultText="لقد حصلت على "+score+" من "+total+" نقطة.";
+
+    if(score==total){
+        resultText+=" ممتاز! جميع الإجابات صحيحة 🎉";
+    }else if(score>=total/2){
+        resultText+=" جيد! لكن يمكن تحسين بعض الإجابات.";
+    }else{
+        resultText+=" ضعيف! حاول مرة أخرى.";
+    }
+
+    document.getElementById("quizResult").innerText=resultText;
+}
+</script>
+
+</body>
+</html>

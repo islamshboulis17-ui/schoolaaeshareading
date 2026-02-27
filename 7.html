@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أفضل الروايات العربية الهادفة</title>
+    <style>
+        :root {
+            --library-brown: #4e342e;
+            --accent-gold: #d4af37;
+            --paper-white: #fafafa;
+            --text-gray: #555;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0ede5;
+            color: var(--library-brown);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--library-brown);
+            color: var(--paper-white);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-gold);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-style: italic;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        .novel-grid {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .novel-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ddd;
+        }
+
+        .novel-image-placeholder {
+            height: 200px;
+            background: linear-gradient(45deg, var(--library-brown), #8d6e63);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .novel-info {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .novel-info h3 {
+            margin: 0 0 10px 0;
+            color: var(--library-brown);
+            font-size: 1.5rem;
+        }
+
+        .author-tag {
+            background: var(--accent-gold);
+            color: white;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .novel-summary {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .moral-badge {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #2e7d32;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #e0d9cc;
+            color: var(--library-brown);
+            margin-top: 50px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>روايات عربية خالدة</h1>
+    <p>بين السطور.. تكمن حكمة الشعوب وقصص الأمل</p>
+</header>
+
+<div class="novel-grid">
+    <div class="novel-card">
+        <div class="novel-image-placeholder">١</div>
+        <div class="novel-info">
+            <span class="author-tag">نجيب محفوظ</span>
+            <h3>الثلاثية</h3>
+            <p class="novel-summary">ملحمة إنسانية ترصد تغيرات المجتمع المصري عبر أجيال، وتناقش الصراع بين التقليد والحداثة، والبحث عن الذات.</p>
+            <span class="moral-badge">📌 القيمة: فهم التحولات الاجتماعية وبناء الهوية.</span>
+        </div>
+    </div>
+
+    <div class="novel-card">
+        <div class="novel-image-placeholder">٢</div>
+        <div class="novel-info">
+            <span class="author-tag">عبد الرحمن منيف</span>
+            <h3>مدن الملح</h3>
+            <p class="novel-summary">رواية ضخمة تحكي قصة التغيرات الجذرية التي طرأت على الجزيرة العربية بعد اكتشاف النفط وكيف أثر ذلك على الإنسان والأرض.</p>
+            <span class="moral-badge">📌 القيمة: الصراع بين الأصالة والتطور السريع.</span>
+        </div>
+    </div>
+
+    <div class="novel-card">
+        <div class="novel-image-placeholder">٣</div>
+        <div class="novel-info">
+            <span class="author-tag">غسان كنفاني</span>
+            <h3>رجال في الشمس</h3>
+            <p class="novel-summary">قصة رمزية قوية عن الشتات والبحث عن لقمة العيش، تطرح تساؤلات وجودية حول الصمت والمقاومة.</p>
+            <span class="moral-badge">📌 القيمة: تعزيز روح الصمود ورفض الاستسلام.</span>
+        </div>
+    </div>
+
+    <div class="novel-card">
+        <div class="novel-image-placeholder">٤</div>
+        <div class="novel-info">
+            <span class="author-tag">مصطفى لطفي المنفلوطي</span>
+            <h3>في سبيل التاج</h3>
+            <p class="novel-summary">رواية مترجمة بتصرف أدبي رفيع، تتناول قيم التضحية والوفاء والواجب الوطني بأسلوب لغوي ساحر.</p>
+            <span class="moral-badge">📌 القيمة: ترسيخ معاني التضحية والفروسية الأخلاقية.</span>
+        </div>
+    </div>
+
+    <div class="novel-card">
+        <div class="novel-image-placeholder">٥</div>
+        <div class="novel-info">
+            <span class="author-tag">إبراهيم الكوني</span>
+            <h3>المجوس</h3>
+            <p class="novel-summary">رحلة فلسفية في صحراء الطوارق، تبحث في علاقة الإنسان بالطبيعة والروحانيات والصراع مع شهوة السلطة.</p>
+            <span class="moral-badge">📌 القيمة: التأمل في جوهر الوجود والحرية.</span>
+        </div>
+    </div>
+</div>
+
+<footer>
+    رواية واحدة قد تغير نظرتك للعالم &copy; 2026
+</footer>
+
+</body>
+</html>

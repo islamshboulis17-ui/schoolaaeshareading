@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كتب تنمية التفكير والإبداع</title>
+    <style>
+        :root {
+            --creative-yellow: #ffeb3b;
+            --focus-dark: #263238;
+            --idea-blue: #03a9f4;
+            --bg-light: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--focus-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* رأس الصفحة بتصميم عصري */
+        header {
+            background-color: var(--focus-dark);
+            color: var(--creative-yellow);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: "💡";
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.1;
+            top: -20px;
+            left: -20px;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        header p {
+            color: white;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .category-tag {
+            background: var(--idea-blue);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .books-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .book-item {
+            background: #fdfdfd;
+            border: 2px solid var(--focus-dark);
+            padding: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .book-item:hover {
+            background: var(--creative-yellow);
+            transform: rotate(-2deg);
+            box-shadow: 10px 10px 0px var(--focus-dark);
+        }
+
+        .book-item h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+        }
+
+        .author {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 15px;
+            color: var(--idea-blue);
+        }
+
+        .book-item:hover .author {
+            color: var(--focus-dark);
+        }
+
+        .summary {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .skill-list {
+            margin-top: 15px;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-list li {
+            font-size: 0.8rem;
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px;
+            background: #f4f4f4;
+            margin-top: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>عقلك.. آلة الإبداع</h1>
+    <p>استكشف الكتب التي ستغير طريقة تفكيرك إلى الأبد</p>
+</header>
+
+<div class="container">
+    <div class="books-layout">
+        
+        <div class="book-item">
+            <span class="category-tag">تفكير نقدي</span>
+            <h2>قبعات التفكير الست</h2>
+            <span class="author">إدوارد دي بونو</span>
+            <p class="summary">أحد أشهر الكتب في تنظيم التفكير، حيث يعلمك كيف تفصل بين العاطفة، المنطق، التفاؤل، والإبداع عبر تقمص "6 قبعات" مختلفة.</p>
+            <ul class="skill-list">
+                <li>#حل_المشكلات</li>
+                <li>#العمل_الجماعي</li>
+            </ul>
+        </div>
+
+        <div class="book-item">
+            <span class="category-tag">إبداع</span>
+            <h2>سرقة مثل فنان</h2>
+            <span class="author">أوستن كليون</span>
+            <p class="summary">كتاب ملهم يخبرك أن لا شيء أصلي تماماً، ويعلمك كيف تستلهم من الآخرين لتبني بصمتك الخاصة بطريقة إبداعية.</p>
+            <ul class="skill-list">
+                <li>#توليد_الأفكار</li>
+                <li>#الفن</li>
+            </ul>
+        </div>
+
+        <div class="book-item">
+            <span class="category-tag">عادات ذهنية</span>
+            <h2>التفكير السريع والبطيء</h2>
+            <span class="author">دانيال كانيمان</span>
+            <p class="summary">كتاب عميق يشرح النظامين الذين يتحكمان في عقلك؛ النظام البديهي السريع، والنظام المنطقي البطيء، وكيفية تجنب الانحيازات.</p>
+            <ul class="skill-list">
+                <li>#علم_النفس</li>
+                <li>#اتخاذ_القرار</li>
+            </ul>
+        </div>
+
+        <div class="book-item">
+            <span class="category-tag">تحفيز</span>
+            <h2>الوثبة (Linchpin)</h2>
+            <span class="author">سيث غودين</span>
+            <p class="summary">يدعوك هذا الكتاب لأن تصبح شخصاً لا يمكن الاستغناء عنه في عملك من خلال كسر القواعد القديمة وتبني "الفن" في كل ما تفعله.</p>
+            <ul class="skill-list">
+                <li>#الريادة</li>
+                <li>#التغيير</li>
+            </ul>
+        </div>
+
+        <div class="book-item">
+            <span class="category-tag">استراتيجية</span>
+            <h2>إستراتيجية المحيط الأزرق</h2>
+            <span class="author">دبليو تشان كيم</span>
+            <p class="summary">كتاب في التفكير الاستراتيجي يعلمك كيف تخلق مساحة سوقية جديدة بدلاً من التنافس في الأسواق المزدحمة.</p>
+            <ul class="skill-list">
+                <li>#الابتكار</li>
+                <li>#التخطيط</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    الفكرة هي العملة الأغلى في القرن الواحد والعشرين &copy; 2026
+</footer>
+
+</body>
+</html>

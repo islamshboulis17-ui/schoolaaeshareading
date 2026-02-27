@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المطالعة: نافذة العقل على العالم</title>
+    <style>
+        :root {
+            --soft-teal: #4db6ac;
+            --warm-beige: #faf7f2;
+            --deep-gray: #455a64;
+            --accent-orange: #ff8a65;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--warm-beige);
+            color: var(--deep-gray);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        .header-bg {
+            background-color: var(--soft-teal);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        .header-bg h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: -40px auto 40px;
+            padding: 0 20px;
+        }
+
+        .intro-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-bottom: 4px solid var(--soft-teal);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefit-item h3 {
+            color: var(--soft-teal);
+            font-size: 1.4rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quote-section {
+            background-color: var(--deep-gray);
+            color: #eee;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 50px 0;
+            font-size: 1.5rem;
+            font-style: italic;
+        }
+
+        .tips-list {
+            background: #e0f2f1;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px dashed var(--soft-teal);
+        }
+
+        .tips-list h2 {
+            margin-top: 0;
+            color: var(--deep-gray);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+            .header-bg h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-bg">
+    <h1>سحر المطالعة</h1>
+    <p>القراءة هي جواز سفرك إلى آلاف الحيوات</p>
+</div>
+
+<div class="container">
+    <div class="intro-card">
+        <p style="font-size: 1.2rem;">"الكتاب هو الجليس الذي لا يطريك، والصديق الذي لا يغريك، والرفيق الذي لا يملّك."</p>
+    </div>
+
+    <div class="benefits-grid">
+        <div class="benefit-item">
+            <h3>📖 توسيع الآفاق</h3>
+            <p>تسمح لك المطالعة بالتعرف على ثقافات وعصور وأفكار لم تكن لتصل إليها في حياتك اليومية.</p>
+        </div>
+        <div class="benefit-item">
+            <h3>🧠 تمرين العقل</h3>
+            <p>تساعد القراءة في تقوية الذاكرة، وزيادة التركيز، وتأخير بوادر الشيخوخة الذهنية.</p>
+        </div>
+        <div class="benefit-item">
+            <h3>🌿 تقليل التوتر</h3>
+            <p>تعتبر القراءة وسيلة فعالة للهروب من ضغوط الحياة اليومية، حيث تنقلك إلى عالم من الهدوء والخيال.</p>
+        </div>
+        <div class="benefit-item">
+            <h3>✍️ إثراء الحصيلة اللغوية</h3>
+            <p>كل كتاب تقرأه يضيف إلى معجمك الشخصي كلمات وأساليب تعبيرية جديدة تجعلك أكثر فصاحة.</p>
+        </div>
+    </div>
+
+    <div class="quote-section">
+        "أنا لا أقرأ لأكتب، بل أقرأ لأعيش." <br>
+        <small style="font-size: 1rem; color: var(--soft-teal);">— العقاد</small>
+    </div>
+
+    <div class="tips-list">
+        <h2>كيف تجعل المطالعة عادة يومية؟</h2>
+        <ul>
+            <li>ابدأ بـ 15 دقيقة فقط يومياً قبل النوم.</li>
+            <li>احمل كتابك معك دائماً لاستغلال أوقات الانتظار.</li>
+            <li>لا تجبر نفسك على إنهاء كتاب لم يعجبك؛ العالم مليء بالكتب الرائعة.</li>
+            <li>نوع في قراءاتك بين الأدب، التاريخ، والعلوم.</li>
+        </ul>
+    </div>
+
+    <footer>
+        القراءة حياة أخرى نعيشها &copy; 2026
+    </footer>
+</div>
+
+</body>
+</html>

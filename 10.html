@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أشهر الكتب العلمية للناشئين</title>
+    <style>
+        :root {
+            --space-blue: #0b3d91;
+            --nature-green: #27ae60;
+            --physics-red: #c0392b;
+            --tech-purple: #8e44ad;
+            --light-bg: #fdfdfd;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--space-blue);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        /* تصميم بطاقة الكتاب */
+        .book-item {
+            background: white;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-right: 8px solid;
+        }
+
+        .field-space { border-right-color: var(--space-blue); }
+        .field-nature { border-right-color: var(--nature-green); }
+        .field-physics { border-right-color: var(--physics-red); }
+        .field-tech { border-right-color: var(--tech-purple); }
+
+        .book-cover {
+            flex: 1 1 200px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            min-height: 250px;
+        }
+
+        .book-content {
+            flex: 2 1 400px;
+            padding: 25px;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: white;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .h3-title { margin: 10px 0; color: #333; }
+        .summary-text { color: #555; font-size: 1.05rem; margin-bottom: 15px; }
+        .target-grade { font-weight: bold; color: #7f8c8d; font-size: 0.9rem; }
+
+        .btn-more {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .book-item { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📚 روائع المكتبة العلمية</h1>
+    <p>مختارات من أهم الكتب التي شكلت فهمنا للعالم</p>
+</header>
+
+<div class="container">
+
+    <div class="book-item field-space">
+        <div class="book-cover" style="background: #eef2f7;">🔭</div>
+        <div class="book-content">
+            <span class="category-badge" style="background: var(--space-blue);">علوم الفضاء</span>
+            <h2 class="h3-title">الكون: دليل المبتدئين</h2>
+            <p class="target-grade">المستوى: الصف السابع - التاسع</p>
+            <p class="summary-text">
+                يأخذ هذا الكتاب القارئ في رحلة من الانفجار العظيم إلى الثقوب السوداء. يشرح المفاهيم المعقدة مثل "النسبية" و"توسع الكون" بلغة مبسطة ورسوم توضيحية مذهلة تجعل الفضاء يبدو أقرب إلينا من أي وقت مضى.
+            </p>
+            <a href="#" class="btn-more">عرض الملخص الكامل</a>
+        </div>
+    </div>
+
+    <div class="book-item field-nature">
+        <div class="book-cover" style="background: #e8f5e9;">🌿</div>
+        <div class="book-content">
+            <span class="category-badge" style="background: var(--nature-green);">عالم الحيوان والنبات</span>
+            <h2 class="h3-title">موسوعة الحياة البرية</h2>
+            <p class="target-grade">المستوى: الصف الرابع - السادس</p>
+            <p class="summary-text">
+                كتاب تفاعلي يستعرض سلاسل الغذاء، التكيف عند الحيوانات، وكيف تحمي الغابات المطيرة كوكبنا. يحتوي على حقائق مدهشة حول ذكاء الحيوانات وقدرتها على البقاء في أصعب الظروف البيئية.
+            </p>
+            <a href="#" class="btn-more">استكشف الكتاب</a>
+        </div>
+    </div>
+
+    <div class="book-item field-physics">
+        <div class="book-cover" style="background: #fbe9e7;">⚡</div>
+        <div class="book-content">
+            <span class="category-badge" style="background: var(--physics-red);">الفيزياء المسلية</span>
+            <h2 class="h3-title">كيف تعمل الأشياء؟</h2>
+            <p class="target-grade">المستوى: الصف الخامس - الثامن</p>
+            <p class="summary-text">
+                هل تساءلت يوماً كيف يطير الهاتف المحمول بإشاراته؟ أو كيف تعمل المحركات؟ هذا الكتاب يفكك الآلات المعقدة ويشرح القوانين الفيزيائية (مثل الجاذبية والاحتكاك) التي تحرك عالمنا اليومي بأسلوب قصصي ممتع.
+            </p>
+            <a href="#" class="btn-more">اقرأ المزيد</a>
+        </div>
+    </div>
+
+    <div class="book-item field-tech">
+        <div class="book-cover" style="background: #f3e5f5;">🤖</div>
+        <div class="book-content">
+            <span class="category-badge" style="background: var(--tech-purple);">الذكاء الاصطناعي</span>
+            <h2 class="h3-title">عصر الروبوتات والبرمجة</h2>
+            <p class="target-grade">المستوى: الصف السادس - التاسع</p>
+            <p class="summary-text">
+                يستعرض الكتاب تاريخ الحواسيب وتطور الذكاء الاصطناعي. يقدم مبادئ التفكير المنطقي والبرمجيات، ويشرح كيف يمكن للروبوتات مساعدتنا في الطب، استكشاف البحار، وحتى الطبخ!
+            </p>
+            <a href="#" class="btn-more">ابدأ التعلم</a>
+        </div>
+    </div>
+
+</div>
+
+<footer style="text-align: center; color: #888; padding-bottom: 40px;">
+    تذكر دائماً: "القراءة هي العضلات التي تبني عقلك العلمي"
+</footer>
+
+</body>
+</html>
