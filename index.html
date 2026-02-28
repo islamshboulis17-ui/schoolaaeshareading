@@ -180,6 +180,7 @@ font-weight:bold;
 </header>
 
 <!-- عداد الزوار -->
+
 <div style="direction: rtl; text-align: center; margin: 50px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
     
     <h2 style="color: #333; font-size: 28px; margin-bottom: 20px; font-weight: bold;">
@@ -199,18 +200,6 @@ font-weight:bold;
 </div>
 
 
-
-
-<div class="official-links">
-    <strong style="text-align:center">روابط رسمية:</strong>
-    <a href="https://moe.gov.jo" target="_blank">وزارة التربية والتعليم</a> | 
-    <a href="https://nccd.gov.jo" target="_blank">المركز الوطني لتطوير المناهج</a> | 
-    <a href="https://siraj.moe.gov.jo">المساعد الذكي سراج</a> | 
-    <a href="https://darsak.gov.jo" target="_blank">منصة درسك</a>
-</div>
-
-
-<div class="container">
 
 <!-- أركان المنصة -->
 <section class="section-box">
@@ -279,10 +268,11 @@ font-weight:bold;
 <button id="showQuizBtn">ابدأ المسابقة</button>
 
 <!-- مسابقة اللغة العربية (مخفية) -->
-<section class="section-box" id="quiz-section" >
+<section class="section-box" id="quiz-section">
 <h2>مسابقة: اختبر معلوماتك في اللغة العربية</h2>
 
 <form id="quizForm">
+
 
 <div class="quiz-question">
 <p><b>1- ما هو العلم الذي يدرس أواخر الكلمات وإعرابها؟</b></p>
@@ -291,18 +281,63 @@ font-weight:bold;
 <label><input type="radio" name="q1" value="0"> علم الصرف</label>
 </div>
 
+
+
 <div class="quiz-question">
-<p><b>2- من هو مؤلف ألفية ابن مالك؟</b></p>
-<label><input type="radio" name="q2" value="1"> ابن مالك</label><br>
-<label><input type="radio" name="q2" value="0"> المتنبي</label><br>
-<label><input type="radio" name="q2" value="0"> أبو تمام</label>
+    <p><b>2- أي من الكلمات التالية تصنف على أنها "حرف"؟</b></p>
+    <label><input type="radio" name="q2" value="0"> كتب</label><br>
+    <label><input type="radio" name="q2" value="0"> القلم</label><br>
+    <label><input type="radio" name="q2" value="1"> إلى</label>
 </div>
 
 <div class="quiz-question">
-<p><b>3- أي من التالي يعتبر من أبرز أعلام الشعر العربي؟</b></p>
-<label><input type="radio" name="q3" value="1"> أحمد شوقي</label><br>
-<label><input type="radio" name="q3" value="0"> ابن خلدون</label><br>
-<label><input type="radio" name="q3" value="0"> ابن سينا</label>
+    <p><b>3- ما هي علامة رفع "جمع المذكر السالم"؟</b></p>
+    <label><input type="radio" name="q3" value="1"> الواو</label><br>
+    <label><input type="radio" name="q3" value="0"> الألف</label><br>
+    <label><input type="radio" name="q3" value="0"> الضمة</label>
+</div>
+
+<div class="quiz-question">
+    <p><b>4- "كان" وأخواتها تدخل على الجملة الاسمية فـ:</b></p>
+    <label><input type="radio" name="q4" value="1"> ترفع المبتدأ وتنصب الخبر</label><br>
+    <label><input type="radio" name="q4" value="0"> تنصب المبتدأ وترفع الخبر</label><br>
+    <label><input type="radio" name="q4" value="0"> تجر المبتدأ والخبر</label>
+</div>
+
+<div class="quiz-question">
+    <p><b>5- ما هي علامة نصب "المثنى"؟</b></p>
+    <label><input type="radio" name="q5" value="0"> الكسرة</label><br>
+    <label><input type="radio" name="q5" value="1"> الياء</label><br>
+    <label><input type="radio" name="q5" value="0"> الفتحة</label>
+</div>
+
+<div class="quiz-question">
+    <p><b>6- ما هو العلم الذي يدرس جماليات التشبيه والاستعارة؟</b></p>
+    <label><input type="radio" name="q6" value="1"> علم البيان</label><br>
+    <label><input type="radio" name="q6" value="0"> علم المعاني</label><br>
+    <label><input type="radio" name="q6" value="0"> علم البديع</label>
+</div>
+
+<div class="quiz-question">
+    <p><b>7- أي من الأدوات التالية تجزم فعلاً مضارعاً واحداً؟</b></p>
+    <label><input type="radio" name="q7" value="0"> إنْ</label><br>
+    <label><input type="radio" name="q7" value="1"> لَمْ</label><br>
+    <label><input type="radio" name="q7" value="0"> لَنْ</label>
+</div>
+
+
+<div class="quiz-question">
+<p><b>8- من هو مؤلف ألفية ابن مالك؟</b></p>
+<label><input type="radio" name="q8" value="1"> ابن مالك</label><br>
+<label><input type="radio" name="q8" value="0"> المتنبي</label><br>
+<label><input type="radio" name="q8" value="0"> أبو تمام</label>
+</div>
+
+<div class="quiz-question">
+<p><b>9- أي من التالي يعتبر من أبرز أعلام الشعر العربي؟</b></p>
+<label><input type="radio" name="q9" value="1"> أحمد شوقي</label><br>
+<label><input type="radio" name="q9" value="0"> ابن خلدون</label><br>
+<label><input type="radio" name="q9" value="0"> ابن سينا</label>
 </div>
 
 <button type="button" onclick="checkQuiz()">إظهار النتيجة</button>
@@ -313,6 +348,7 @@ font-weight:bold;
 </section>
 
 </div>
+
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -342,7 +378,9 @@ font-weight:bold;
         .counter-img { height: 50px; border-radius: 5px; }
 
         /* تصميم صندوق التعليقات */
-        .comment-box {
+
+
+.comment-box {
             max-width: 600px;
             margin: auto;
             background: white;
@@ -461,7 +499,10 @@ font-weight:bold;
 </body>
 </html>
 
-   
+
+
+
+
 <footer>
 <p>إعداد المعلمة </p>
 <div class="signature">إسلام الشبول</div>
@@ -488,7 +529,7 @@ document.getElementById("showQuizBtn").addEventListener("click", function(){
 
 // تصحيح المسابقة
 function checkQuiz(){
-    let total=3; // عدد الأسئلة
+    let total=9; // عدد الأسئلة
     let score=0;
 
     for(let i=1;i<=total;i++){
@@ -504,7 +545,7 @@ function checkQuiz(){
 
     if(score==total){
         resultText+=" ممتاز! جميع الإجابات صحيحة 🎉";
-    }else if(score>=total/2){
+    }else if(score>=total/8){
         resultText+=" جيد! لكن يمكن تحسين بعض الإجابات.";
     }else{
         resultText+=" ضعيف! حاول مرة أخرى.";
@@ -516,6 +557,3 @@ function checkQuiz(){
 
 </body>
 </html>
-
-
-
