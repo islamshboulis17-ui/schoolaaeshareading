@@ -314,12 +314,11 @@ font-weight:bold;
 
 </div>
 
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>نظام التعليقات الذكي مع التخزين</title>
+    <title>موقعي - نظام التعليقات والعداد</title>
     <style>
         :root {
             --primary: #5d4037;
@@ -327,7 +326,21 @@ font-weight:bold;
             --bg: #fdfcf0;
         }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); padding: 20px; }
-        
+
+        /* تنسيق عداد الزوار الجديد */
+        .visitor-stats {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+        }
+        .visitor-stats h3 { margin: 0 0 10px 0; color: var(--primary); font-size: 1.2rem; }
+        .counter-img { height: 50px; border-radius: 5px; }
+
         /* تصميم صندوق التعليقات */
         .comment-box {
             max-width: 600px;
@@ -347,37 +360,34 @@ font-weight:bold;
         
         button#submitBtn {
             background: var(--primary); color: white; border: none;
-            padding: 10px 25px; border-radius: 6px; cursor: pointer; font-weight: bold;
+            padding: 10px 25px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%;
         }
         button#submitBtn:hover { background: #3e2723; }
 
-        /* تصميم قائمة التعليقات */
         #commentsDisplay { margin-top: 30px; }
         .comment-card {
             background: #f9f9f9; padding: 15px; border-radius: 8px;
             margin-bottom: 15px; border-right: 5px solid var(--accent);
-            animation: slideIn 0.3s ease-out;
         }
         .comment-header { display: flex; justify-content: space-between; font-size: 0.85rem; color: #777; }
         .comment-name { color: var(--primary); font-weight: bold; font-size: 1rem; }
-        .like-section { margin-top: 10px; }
         .like-btn {
             background: #fff; border: 1px solid #ccc; padding: 4px 12px;
-            border-radius: 20px; cursor: pointer; transition: 0.3s;
+            border-radius: 20px; cursor: pointer; margin-top: 10px;
         }
         .liked { background: #e74c3c !important; color: white !important; border-color: #e74c3c !important; }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
     </style>
 </head>
 <body>
 
+<div class="visitor-stats">
+    <h3>إجمالي زوار الموقع</h3>
+    <img src="https://counter9.optistats.ovh/private/freecounterstat.php?c=8l8n7l9u1k8m8u1y7z8u9l1k1m8n1p1u" 
+         class="counter-img" alt="visitor counter">
+</div>
+
 <div class="comment-box">
     <h2>اترك تعليقاً</h2>
-    
     <div class="form-group">
         <input type="text" id="userName" placeholder="اسمك الكريم...">
     </div>
@@ -386,24 +396,17 @@ font-weight:bold;
     </div>
     <button id="submitBtn" onclick="processComment()">نشر التعليق</button>
 
-    <div id="commentsDisplay">
-        </div>
+    <div id="commentsDisplay"></div>
 </div>
 
 <script>
-    // عند تحميل الصفحة، ابدأ بعرض التعليقات المخزنة
-    window.onload = function() {
-        renderComments();
-    };
+    // نفس الكود الخاص بك لإدارة التعليقات
+    window.onload = function() { renderComments(); };
 
     function processComment() {
         const name = document.getElementById('userName').value.trim();
         const content = document.getElementById('commentContent').value.trim();
-
-        if (name === "" || content === "") {
-            alert("فضلاً، املأ جميع الحقول");
-            return;
-        }
+        if (name === "" || content === "") { alert("فضلاً، املأ جميع الحقول"); return; }
 
         const newComment = {
             id: Date.now(),
@@ -414,16 +417,10 @@ font-weight:bold;
             isLiked: false
         };
 
-        // جلب البيانات الحالية من التخزين
         let comments = JSON.parse(localStorage.getItem('myCommentsData')) || [];
-        
-        // إضافة التعليق الجديد للبداية
         comments.unshift(newComment);
-        
-        // حفظ في التخزين المحلي
         localStorage.setItem('myCommentsData', JSON.stringify(comments));
 
-        // مسح الحقول وإعادة العرض
         document.getElementById('userName').value = "";
         document.getElementById('commentContent').value = "";
         renderComments();
@@ -432,9 +429,7 @@ font-weight:bold;
     function renderComments() {
         const display = document.getElementById('commentsDisplay');
         const comments = JSON.parse(localStorage.getItem('myCommentsData')) || [];
-        
         display.innerHTML = "";
-
         comments.forEach(c => {
             const card = document.createElement('div');
             card.className = 'comment-card';
@@ -444,11 +439,9 @@ font-weight:bold;
                     <span>${c.time}</span>
                 </div>
                 <p>${c.text}</p>
-                <div class="like-section">
-                    <button class="like-btn ${c.isLiked ? 'liked' : ''}" onclick="toggleLike(${c.id})">
-                        ❤️ إعجاب (${c.likes})
-                    </button>
-                </div>
+                <button class="like-btn ${c.isLiked ? 'liked' : ''}" onclick="toggleLike(${c.id})">
+                    ❤️ إعجاب (${c.likes})
+                </button>
             `;
             display.appendChild(card);
         });
@@ -457,20 +450,17 @@ font-weight:bold;
     function toggleLike(id) {
         let comments = JSON.parse(localStorage.getItem('myCommentsData'));
         const index = comments.findIndex(c => c.id === id);
-        
         if (index !== -1) {
-            if (!comments[index].isLiked) {
-                comments[index].likes++;
-                comments[index].isLiked = true;
-            } else {
-                comments[index].likes--;
-                comments[index].isLiked = false;
-            }
+            comments[index].isLiked = !comments[index].isLiked;
+            comments[index].likes += comments[index].isLiked ? 1 : -1;
             localStorage.setItem('myCommentsData', JSON.stringify(comments));
             renderComments();
         }
     }
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
@@ -530,4 +520,5 @@ function checkQuiz(){
 
 </body>
 </html>
+
 
