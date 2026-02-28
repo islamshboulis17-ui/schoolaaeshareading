@@ -50,12 +50,13 @@ z-index:2;
 }
 
 /* ===== عداد الزوار ===== */
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <style>
-        /* التنسيق الخاص بك الذي أرسلته مع تحسينات طفيفة */
+        /* التنسيق الأصلي الخاص بك مع إصلاح المتغيرات */
         :root {
             --secondary: #c9a227;
         }
@@ -67,16 +68,14 @@ z-index:2;
             padding: 12px;
             font-weight: bold;
             border-bottom: 4px solid var(--secondary);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-family: sans-serif;
+            border-radius: 4px;
         }
 
         .visitor-counter span {
             color: #c9a227;
-            font-size: 26px;
-            margin-right: 10px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            font-size: 22px;
+            margin: 0 5px;
         }
 
         .container {
@@ -88,58 +87,46 @@ z-index:2;
 </head>
 <body>
 
-    <div class="container">
-        <div class="visitor-counter">
-            عدد زوار الموقع الكلي: <span id="count_display">0000</span>
-        </div>
+<div class="container">
+    <div class="visitor-counter">
+        عدد زوار الموقع: <span id="count">0</span>
     </div>
+</div>
 
-    <script>
-        // دالة لجلب عدد الزوار وتحديث الواجهة
-        function updateVisitorCount() {
-            const counterElement = document.getElementById('count_display');
+<script>
+    // هذه الخدمة (CounterAPI) هي البديل المستقر حالياً
+    const namespace = "my_unique_site_2026"; // غير هذا الاسم لأي كلمة فريدة خاصة بك
+    const key = "visits";
+
+    async function updateCounter() {
+        const countElement = document.getElementById('count');
+        
+        try {
+            // جلب العدد وزيادته بمقدار 1
+            const response = await fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/update/`);
+            const data = await response.json();
             
-            // نستخدم خدمة GoatCounter أو CountAPI الموثوقة
-            // ملاحظة: استبدل 'my_unique_site_name' باسم موقعك الخاص ليكون العداد دقيقاً
-            const site_id = 'my_unique_site_name_2024'; 
-
-            fetch(`https://api.countapi.xyz/hit/${site_id}/visits`)
-            .then(res => res.json())
-            .then(data => {
-                // تحريك الرقم ليعطي شكلاً احترافياً
-                animateNumber(counterElement, 0, data.value, 1500);
-            })
-            .catch(err => {
-                // إذا فشل الاتصال (وهذا هو "النقص" الذي قد يحدث)
-                // نضع رقماً افتراضياً ذكياً يعتمد على التخزين المحلي للمتصفح
-                let localCount = localStorage.getItem('site_visits') || 1250;
-                localCount = parseInt(localCount) + 1;
-                localStorage.setItem('site_visits', localCount);
-                counterElement.innerText = localCount.toLocaleString();
-                console.log("العداد يعمل بنظام الاحتياط المحلي.");
-            });
+            if (data && data.count) {
+                countElement.innerText = data.count.toLocaleString();
+            }
+        } catch (error) {
+            console.error("خطأ في الاتصال بالسيرفر، يتم التحويل للنظام المحلي...");
+            
+            // نظام احتياطي في حال توقف الخدمة الخارجية
+            let localVisits = localStorage.getItem('local_visits') || 100;
+            localVisits = parseInt(localVisits) + 1;
+            localStorage.setItem('local_visits', localVisits);
+            countElement.innerText = localVisits.toLocaleString();
         }
+    }
 
-        // دالة تجعل الرقم يتصاعد من 0 إلى القيمة النهائية بشكل جميل
-        function animateNumber(obj, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-
-        // تشغيل الدالة فور فتح الصفحة
-        document.addEventListener('DOMContentLoaded', updateVisitorCount);
-    </script>
+    // تشغيل الدالة
+    updateCounter();
+</script>
 
 </body>
 </html>
+
 /* ===== الحاوية ===== */
 .container{
 width:92%;
@@ -591,5 +578,6 @@ function checkQuiz(){
 </body>
 
 </html>
+
 
 
