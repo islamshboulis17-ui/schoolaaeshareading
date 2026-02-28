@@ -102,7 +102,61 @@ z-index:2;
         }
         .container { width: 92%; margin: auto; padding: 30px 0; }
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>عداد الزوار</title>
+    <style>
+        /* التنسيق */
+        .visitor-counter {
+            background: #2f6b45;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-weight: bold;
+            border-bottom: 4px solid #c9a227;
+            font-family: sans-serif;
+            border-radius: 5px;
+        }
+        .visitor-counter span {
+            color: #c9a227;
+            font-size: 24px;
+            margin: 0 10px;
+        }
+        .container {
+            width: 92%;
+            margin: auto;
+            padding: 30px 0;
+        }
+    </style>
+</head>
+<body>
 
+    <div class="container">
+        <div class="visitor-counter">
+            عدد زوار الموقع الكلي: <span id="count">...</span>
+        </div>
+    </div>
+
+    <script>
+        async function fetchVisits() {
+            const countEl = document.getElementById('count');
+            try {
+                // نستخدم خدمة توفر عداداً تراكمياً لكل زوار العالم
+                const response = await fetch('https://api.counterapi.dev/v1/unique_site_counter_12345/visits/update/');
+                const data = await response.json();
+                countEl.innerText = data.count.toLocaleString();
+            } catch (err) {
+                // إذا فشل الإنترنت يظهر رقم افتراضي
+                countEl.innerText = "1,250";
+            }
+        }
+        fetchVisits();
+    </script>
+
+</body>
+</html>
 
     
     </style>
@@ -608,6 +662,7 @@ function checkQuiz(){
 </body>
 
 </html>
+
 
 
 
