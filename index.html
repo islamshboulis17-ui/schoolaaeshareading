@@ -110,55 +110,7 @@ z-index:2;
     
     </style>
 </head>
-<body>
 
-<div class="container">
-    <div class="visitor-counter">
-        عدد الزوار الإجمالي: <span id="count">...</span>
-    </div>
-</div>
-
-<script src="https://unpkg.com/@replit/database@0.0.2/dist/index.js"></script>
-
-<script>
-    // سنستخدم خدمة بديلة لـ CountAPI تسمى 'CounterAPI' وهي حالياً الأكثر استقراراً لعام 2026
-    // تعمل على حفظ الرقم لكل الزوار في خادم سحابي
-    
-    async function getGlobalVisits() {
-        const countElement = document.getElementById('count');
-        
-        // معرف فريد لموقعك (يمكنك تغيير 'my_unique_website_id' لأي اسم تريده)
-        const siteID = "site_visitor_counter_2026"; 
-
-        try {
-            // هذا الرابط يقوم بزيادة العدد (Update) وجلب القيمة الجديدة لكل العالم
-            const response = await fetch(`https://api.countapi.xyz/hit/${siteID}/visits`);
-            const data = await response.json();
-            
-            if(data.value) {
-                countElement.innerText = data.value.toLocaleString();
-            }
-        } catch (error) {
-            // في حال تعطل السيرفر الخارجي، نستخدم وسيلة بديلة لضمان عدم ظهور "خطأ"
-            // سنستخدم خدمة 'api.countapi.it' كبديل
-            fetch(`https://api.countapi.it/hit/${siteID}/visits`)
-                .then(res => res.json())
-                .then(data => {
-                    countElement.innerText = data.value.toLocaleString();
-                })
-                .catch(() => {
-                    // إذا فشل كل شيء، يظهر رقم افتراضي نشط
-                    countElement.innerText = "1,850";
-                });
-        }
-    }
-
-    // تشغيل الدالة فوراً
-    getGlobalVisits();
-</script>
-
-</body>
-</html>
 </html>   
 /* ===== الحاوية ===== */
 .container{
@@ -611,6 +563,7 @@ function checkQuiz(){
 </body>
 
 </html>
+
 
 
 
