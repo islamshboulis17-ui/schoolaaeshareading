@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الحوار الذكية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+
+    <style>
+        :root {
+            --bg: #eef2f7;
+            --primary: #6c5ce7;
+            --secondary: #00cec9;
+            --accent: #ff7675;
+            --glass: rgba(255, 255, 255, 0.9);
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--bg);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container { width: 100%; max-width: 700px; }
+
+        /* الهيدر وعداد التعليقات */
+        .header-box {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .counter-badge {
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3);
+        }
+
+        /* صندوق الإدخال */
+        .input-card {
+            background: var(--glass);
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 10px 10px 20px #d1d9e6, -10px -10px 20px #ffffff;
+            margin-bottom: 30px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 15px;
+            background: #f1f3f6;
+            box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        .btn-main {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* بطاقة التعليق */
+        .comment-card {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            border-right: 8px solid var(--secondary);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+        .name-tag { font-weight: 700; color: var(--primary); margin-bottom: 10px; display: block; }
+        .text-content { color: #444; line-height: 1.6; }
+
+        .footer-actions {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .btn-action {
+            padding: 6px 12px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+
+        .btn-like { background: #ffeef0; color: var(--accent); }
+        .btn-edit { background: #eef2ff; color: var(--primary); }
+        .btn-delete { background: #fdf2f2; color: #eb4d4b; }
+
+        .btn-action:hover { filter: brightness(0.95); transform: scale(1.05); }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-box">
+        <h1 style="color: #2d3436;">آراء الزوار ✨</h1>
+        <span class="counter-badge">إجمالي التعليقات: <span id="comment-count">0</span></span>
+    </div>
+
+    <div class="input-card">
+        <input type="text" id="username" placeholder="ما اسمك؟">
+        <textarea id="comment" rows="3" placeholder="اكتب تعليقك هنا..."></textarea>
+        <button class="btn-main" onclick="postComment()">نشر التعليق</button>
+    </div>
+
+    <div id="display-area"></div>
+</div>
+
+<script>
+    // --- ضع بياناتك الصحيحة هنا ---
+    const firebaseConfig = {
+        apiKey: "AIzaSy...", 
+        authDomain: "mycommentsapp-954f5.firebaseapp.com",
+        databaseURL: "https://mycommentsapp-954f5-default-rtdb.firebaseio.com",
+        projectId: "mycommentsapp-954f5",
+        storageBucket: "mycommentsapp-954f5.appspot.com",
+        messagingSenderId: "YOUR_ID",
+        appId: "YOUR_APP_ID"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    // إرسال تعليق
+    function postComment() {
+        const name = document.getElementById('username').value;
+        const text = document.getElementById('comment').value;
+
+        if(!name || !text) return alert("املأ الحقول أولاً");
+
+        db.ref('comments').push({
+            name: name,
+            text: text,
+            likes: 0,
+            timestamp: Date.now()
+        });
+
+        document.getElementById('comment').value = '';
+    }
+
+    // عرض التعليقات والعداد
+    db.ref('comments').on('value', (snap) => {
+        const area = document.getElementById('display-area');
+        const countSpan = document.getElementById('comment-count');
+        area.innerHTML = '';
+        
+        let count = 0;
+        snap.forEach((child) => {
+            count++;
+            const data = child.val();
+            const id = child.key;
+
+            const html = `
+                <div class="comment-card">
+                    <span class="name-tag">👤 ${data.name}</span>
+                    <p class="text-content" id="text-${id}">${data.text}</p>
+                    <div class="footer-actions">
+                        <button class="btn-action btn-like" onclick="like('${id}', ${data.likes})">❤️ ${data.likes}</button>
+                        <button class="btn-action btn-edit" onclick="editComment('${id}', '${data.text}')">تعديل</button>
+                        <button class="btn-action btn-delete" onclick="deleteComment('${id}')">حذف</button>
+                    </div>
+                </div>
+            `;
+            area.insertAdjacentHTML('afterbegin', html);
+        });
+        countSpan.innerText = count;
+    });
+
+    // ميزة الإعجاب
+    function like(id, current) {
+        db.ref('comments/' + id).update({ likes: current + 1 });
+    }
+
+    // ميزة الحذف
+    function deleteComment(id) {
+        if(confirm("هل أنت متأكد من حذف هذا التعليق؟")) {
+            db.ref('comments/' + id).remove();
+        }
+    }
+
+    // ميزة التعديل
+    function editComment(id, oldText) {
+        const newText = prompt("قم بتعديل تعليقك:", oldText);
+        if(newText && newText !== oldText) {
+            db.ref('comments/' + id).update({ text: newText });
+        }
+    }
+</script>
+
+</body>
+</html>
