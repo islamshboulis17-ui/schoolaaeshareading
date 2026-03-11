@@ -350,7 +350,7 @@ font-weight:bold;
 </div>
 
    
-<a href="comment.html" class="vault-btn">أضف تعليقا</a>
+<p style="text-align:center"><a href="comment.html" class="vault-btn">أضف تعليقا</a></p>
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -362,8 +362,7 @@ font-weight:bold;
             --primary: #5d4037;
             --accent: #b8860b;
             --bg: #fdfcf0;
-        }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); padding: 20px; }
+                body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); padding: 20px; }
 
         /* تنسيق عداد الزوار الجديد */
         .visitor-stats {
@@ -420,78 +419,6 @@ font-weight:bold;
 </head>
 <body>
 
-
-
-<div class="comment-box">
-    <h2>اترك تعليقاً</h2>
-    <div class="form-group">
-        <input type="text" id="userName" placeholder="اسمك الكريم...">
-    </div>
-    <div class="form-group">
-        <textarea id="commentContent" rows="3" placeholder="اكتب تعليقك هنا..."></textarea>
-    </div>
-    <button id="submitBtn" onclick="processComment()">نشر التعليق</button>
-
-    <div id="commentsDisplay"></div>
-</div>
-
-<script>
-    // نفس الكود الخاص بك لإدارة التعليقات
-    window.onload = function() { renderComments(); };
-
-    function processComment() {
-        const name = document.getElementById('userName').value.trim();
-        const content = document.getElementById('commentContent').value.trim();
-        if (name === "" || content === "") { alert("فضلاً، املأ جميع الحقول"); return; }
-
-        const newComment = {
-            id: Date.now(),
-            name: name,
-            text: content,
-            time: new Date().toLocaleString('ar-EG'),
-            likes: 0,
-            isLiked: false
-        };
-
-        let comments = JSON.parse(localStorage.getItem('myCommentsData')) || [];
-        comments.unshift(newComment);
-        localStorage.setItem('myCommentsData', JSON.stringify(comments));
-
-        document.getElementById('userName').value = "";
-        document.getElementById('commentContent').value = "";
-        renderComments();
-    }
-
-    function renderComments() {
-        const display = document.getElementById('commentsDisplay');
-        const comments = JSON.parse(localStorage.getItem('myCommentsData')) || [];
-        display.innerHTML = "";
-        comments.forEach(c => {
-            const card = document.createElement('div');
-            card.className = 'comment-card';
-            card.innerHTML = `
-                <div class="comment-header">
-                    <span class="comment-name">${c.name}</span>
-                    <span>${c.time}</span>
-                </div>
-                <p>${c.text}</p>
-                <button class="like-btn ${c.isLiked ? 'liked' : ''}" onclick="toggleLike(${c.id})">
-                    ❤️ إعجاب (${c.likes})
-                </button>
-            `;
-            display.appendChild(card);
-        });
-    }
-
-    function toggleLike(id) {
-        let comments = JSON.parse(localStorage.getItem('myCommentsData'));
-        const index = comments.findIndex(c => c.id === id);
-        if (index !== -1) {
-            comments[index].isLiked = !comments[index].isLiked;
-            comments[index].likes += comments[index].isLiked ? 1 : -1;
-            localStorage.setItem('myCommentsData', JSON.stringify(comments));
-            renderComments();
-        }
     }
 </script>
 
@@ -559,4 +486,6 @@ function checkQuiz(){
 
 </body>
 </html>
+
+
 
